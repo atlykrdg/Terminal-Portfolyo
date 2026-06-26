@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atılay Karadağ | Terminal Portfolyo</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="window-frame">
+        <!-- Windows Terminal Üst Sekme Çubuğu -->
+        <div id="title-bar">
+            <div class="tabs">
+                <div class="tab active-tab">
+                    <!-- Terminal İkonu -->
+                    <svg class="tab-icon" viewBox="0 0 16 16">
+                        <path fill="#ccc" d="M1 2h14v12H1zM0 1h16v14H0z"/>
+                        <path fill="#ccc" d="M2 3h12v10H2z"/>
+                        <path fill="#fff" d="M3 4h4v1H3zm0 2h3v1H3z"/>
+                    </svg>
+                    <span>Vanguard OS Terminal</span>
+                    <span class="close-tab">✕</span>
+                </div>
+                <div class="new-tab">＋</div>
+                <div class="tab-dropdown">⌵</div>
+            </div>
+            <div class="window-controls">
+                <div class="control min">─</div>
+                <div class="control max">☐</div>
+                <div class="control close">✕</div>
+            </div>
+        </div>
+        
+        <!-- Terminal İçeriği -->
+        <div id="terminal-container">
+            <div id="output"></div>
+            <div id="input-container">
+                <span id="prompt">Pilot_Atilay@Vanguard-OS:~$</span>
+                <input type="text" id="command-input" autocomplete="off" autofocus>
+            </div>
+            
+            <!-- 3D ASCII KÜP RENDER ALANI -->
+            <pre id="ascii-cube"></pre>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

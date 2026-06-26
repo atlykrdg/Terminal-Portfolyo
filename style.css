@@ -1,0 +1,183 @@
+body {
+    background-color: #0c0c0c; 
+    color: #ffffff;
+    font-family: 'Consolas', 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Firefox için ince kaydırma çubuğu desteği */
+    scrollbar-width: thin;
+    scrollbar-color: #333333 #0c0c0c;
+}
+
+#window-frame {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #0c0c0c;
+}
+
+/* --- WINDOWS TERMINAL ÜST BAR TASARIMI --- */
+#title-bar {
+    background-color: #1e1e1e; 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; 
+    height: 40px;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.tabs {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    margin-left: 8px;
+}
+
+.tab {
+    background-color: #0c0c0c; 
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    height: 32px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    min-width: 180px;
+    justify-content: space-between;
+    border-bottom: none; 
+}
+
+.tab-icon { width: 14px; height: 14px; margin-right: 10px; }
+.tab span { flex-grow: 1; }
+.close-tab { font-size: 10px; padding: 4px; border-radius: 4px; cursor: pointer; }
+.close-tab:hover { background-color: #333; }
+.new-tab, .tab-dropdown { color: #cccccc; font-size: 16px; padding: 4px 10px; cursor: pointer; height: 32px; display: flex; align-items: center; }
+.new-tab:hover, .tab-dropdown:hover { background-color: #3a3a3a; border-radius: 4px; }
+.window-controls { display: flex; height: 40px; }
+.control { color: #cccccc; width: 46px; display: flex; justify-content: center; align-items: center; font-family: 'Segoe UI', sans-serif; font-size: 12px; cursor: pointer; }
+.control:hover { background-color: #3a3a3a; }
+.control.close:hover { background-color: #e81123; color: white; }
+
+/* --- TERMINAL İÇERİĞİ --- */
+#terminal-container {
+    padding-left: 40px; 
+    padding-top: 40px; /* Üst blur alanına ilk yazının girmemesi için boşluk artırıldı */
+    padding-bottom: 60px; /* Alt blur alanına girmemesi için boşluk artırıldı */
+    padding-right: 20px; /* Kaydırma çubuğuna yer açmak için biraz küçültüldü */
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: #0c0c0c; 
+    position: relative;
+    overflow-x: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 10px, black 35px, black calc(100% - 35px), transparent calc(100% - 10px), transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, transparent 10px, black 35px, black calc(100% - 35px), transparent calc(100% - 10px), transparent 100%);
+}
+
+#output, #input-container {
+    max-width: calc(100% - 500px); 
+    word-wrap: break-word; 
+}
+
+#output { margin-bottom: 10px; }
+.echo { color: #aaaaaa; margin-top: 15px; margin-bottom: 5px; font-weight: bold; }
+.response { color: #ffffff; margin-bottom: 15px; line-height: 1.5; }
+.ai-notice { color: #b7d29a; font-style: italic; font-size: 0.9em; }
+
+#input-container { display: flex; align-items: center; }
+#prompt { color: #b7d29a; margin-right: 10px; white-space: nowrap; }
+#command-input { background: transparent; border: none; color: #ffffff; font-family: 'Consolas', 'Courier New', monospace; font-size: 16px; flex-grow: 1; outline: none; }
+
+/* =========================================
+   3D ASCII KÜP ALANI
+   ========================================= */
+#ascii-cube {
+    position: fixed; 
+    top: 60px; 
+    right: 30px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 9px; 
+    line-height: 9px;
+    color: #b7d29a; 
+    pointer-events: none; 
+    user-select: none;
+    z-index: 10;
+}
+
+/* =========================================
+   ÖZEL KAYDIRMA ÇUBUĞU TASARIMI (SCROLLBAR)
+   ========================================= */
+::-webkit-scrollbar {
+    width: 6px; /* 2. fotoğraftaki gibi ince form */
+}
+
+::-webkit-scrollbar-track {
+    background: #0c0c0c; /* Terminal arkapanıyla bütünleşik */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333333; /* İstenilen minimal koyu gri ton */
+    border-radius: 10px; /* Yuvarlak hatlar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555555; /* Fare üzerine gelince hafif aydınlanma */
+}
+
+/* =========================================
+   AYDINLIK TEMA DESTEĞİ
+   ========================================= */
+body.light-theme {
+    background-color: #FDF6ED; 
+    color: #111810; 
+    /* Aydınlık tema için Firefox desteği */
+    scrollbar-color: #DCCFC0 #FDF6ED;
+}
+body.light-theme #window-frame,
+body.light-theme #terminal-container { background-color: #FDF6ED; }
+body.light-theme #title-bar { background-color: #DCCFC0; }
+body.light-theme .tab { background-color: #FDF6ED; color: #111810; font-weight: bold; }
+body.light-theme .new-tab, body.light-theme .tab-dropdown, body.light-theme .control { color: #2A7312; }
+body.light-theme .control:hover, body.light-theme .new-tab:hover, body.light-theme .tab-dropdown:hover { background-color: #A1BC98; color: #111810; }
+
+body.light-theme .response { color: #111810; }
+
+body.light-theme #prompt { color: #2A7312; font-weight: 900; } 
+body.light-theme #command-input { color: #2A7312; font-weight: bold; }
+body.light-theme .echo { color: #666666; font-weight: bold; } 
+
+body.light-theme span[style*="#b7d29a"] { color: #2A7312 !important; font-weight: 900; } 
+body.light-theme a[style*="#b7d29a"] { color: #2A7312 !important; font-weight: bold; } 
+body.light-theme span[style*="#888888"] { color: #778873 !important; font-weight: bold; } 
+body.light-theme .ai-notice { color: #007700 !important; font-weight: bold; } 
+
+body.light-theme pre[style*="#b7d29a"],
+body.light-theme #ascii-cube { color: #4A5D23 !important; } 
+
+body.light-theme .tab-icon path[fill="#ccc"] { fill: #111810; }
+body.light-theme .tab-icon path[fill="#fff"] { fill: #FDF6ED; }
+
+/* Aydınlık Tema Kaydırma Çubuğu Rengi */
+body.light-theme ::-webkit-scrollbar-track {
+    background: #FDF6ED;
+}
+body.light-theme ::-webkit-scrollbar-thumb {
+    background: #DCCFC0;
+}
+body.light-theme ::-webkit-scrollbar-thumb:hover {
+    background: #A1BC98;
+}
+
+@media (max-width: 1000px) {
+    #ascii-cube { display: none; }
+    #output, #input-container { max-width: 100%; }
+}
