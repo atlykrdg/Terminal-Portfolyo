@@ -572,11 +572,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // ---------------- METİN ŞABLONLARI (CV FORMATI) ----------------
         const txtHakkinda = "Merhaba, ben Atılay Karadağ. Balıkesir Üniversitesi Bilgisayar Mühendisliği 2. sınıf öğrencisiyim. Yazılım geliştirme, donanım/yazılım entegrasyonu ve 3D tasarım alanlarına yoğun ilgi duyuyorum. Dinamik takım ortamlarında uyumlu çalışabilen, modern teknolojileri hızla benimseyerek yenilikçi ve verimli çözümler üretmeyi hedefleyen bir mühendis adayıyım.";
-        const txtWhoami = "Pilot: Atılay Karadağ<br>Sınıf: Bilgisayar Mühendisliği (2. Yıl)<br>Uzmanlık: Yazılım Geliştirme & Donanım Entegrasyonu & 3D Tasarım<br>Statü: Göreve Hazır";
+        const txtWhoami = "<div style='display: flex; align-items: center; gap: 15px; margin-top: 10px;'><img src='profile.jpg' style='width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #b7d29a; box-shadow: 0 0 10px rgba(183, 210, 154, 0.3);' alt='Atılay'><div>Pilot: Atılay Karadağ<br>Sınıf: Bilgisayar Mühendisliği (2. Yıl)<br>Uzmanlık: Yazılım Geliştirme &amp; Donanım Entegrasyonu &amp; 3D Tasarım<br>Statü: Göreve Hazır</div></div>";
         const txtEgitim = "<b>Lisans:</b> Balıkesir Üniversitesi, Bilgisayar Mühendisliği (2024-...) | Not Ortalaması: 3,30<br><b>Lise:</b> Bursa Osmangazi Gazi Anadolu Lisesi (2020-2024) | Sayısal - Diploma Puanı: 88,62";
         const txtDiller = "<b>Kodlama Dilleri:</b><br>- C#<br>- Python<br>- HTML<br>- CSS<br>- JavaScript";
         const txtYabanciDiller = "<b>Yabancı Diller:</b><br>- İngilizce (B2 - Teknik ve Mesleki Yeterlilik)<br>- Türkçe (Anadil)";
-        const txtAraclar = "<b>Editörler (IDE):</b><br>- Visual Studio Code<br>- Visual Studio<br>- PyCharm<br><br><b>Geliştirme, Tasarım & Kurgu Araçları:</b><br>- Autodesk Fusion 360 (3D CAD/Modelleme)<br>- Blender (3D Render/Animasyon)<br>- Unity (Oyun/Simülasyon Motoru)<br>- DaVinci Resolve (Video Kurgu & Renk Düzenleme)";
+        const txtAraclar = "<b>Editörler (IDE):</b><br>- Visual Studio Code<br>- Visual Studio<br>- PyCharm<br><br><b>Geliştirme, Tasarım &amp; Kurgu Araçları:</b><br>- Autodesk Fusion 360 (3D CAD/Modelleme)<br>- Blender (3D Render/Animasyon)<br>- Unity (Oyun/Simülasyon Motoru)<br>- DaVinci Resolve (Video Kurgu &amp; Renk Düzenleme)";
         const txtProjeler = "<b>1. Kafe/Restoran POS ve İşletme Yönetim Sistemi</b><br>" +
                             "- <b>Kategori:</b> Masaüstü Yazılım Geliştirme<br>" +
                             "- <b>Teknolojiler:</b> Python 3, PyQt5, SQLite3<br>" +
