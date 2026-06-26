@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const validCommands = [
         "help", "whoami", "contact", "durum", "status", "github", "repo",
         "projeler", "yetenekler", "kodlama dilleri", "diller", "araçlar", "ide", "eğitim",
-        "okul", "iletişim", "mail", "linkedin", "ls projects", "cat about.txt",
+        "okul", "iletişim", "mail", "linkedin", "ls projects", "cat about.txt", "cat education.txt",
         "skills --list", "sudo hire-me", "render", "render wireframe", "render titan", "draw 3d-box", "top", "tasks", "theme light",
         "theme dark", "clock", "saat", "matrix", "sudo", "admin", "clear", "cls",
         "reboot", "restart", "play snake", "dump all"
@@ -574,7 +574,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const txtHakkinda = "Merhaba, ben Atılay Karadağ. Balıkesir Üniversitesi Bilgisayar Mühendisliği 2. sınıf öğrencisiyim. Yazılım geliştirme, donanım/yazılım entegrasyonu ve 3D tasarım alanlarına yoğun ilgi duyuyorum. Dinamik takım ortamlarında uyumlu çalışabilen, modern teknolojileri hızla benimseyerek yenilikçi ve verimli çözümler üretmeyi hedefleyen bir mühendis adayıyım.";
         const txtWhoami = "Pilot: Atılay Karadağ<br>Sınıf: Bilgisayar Mühendisliği (2. Yıl)<br>Uzmanlık: Yazılım Geliştirme & Donanım Entegrasyonu & 3D Tasarım<br>Statü: Göreve Hazır";
         const txtEgitim = "<b>Lisans:</b> Balıkesir Üniversitesi, Bilgisayar Mühendisliği (2024-...) | Not Ortalaması: 3,30<br><b>Lise:</b> Bursa Osmangazi Gazi Anadolu Lisesi (2020-2024) | Sayısal - Diploma Puanı: 88,62";
-        const txtDiller = "<b>Kodlama Dilleri:</b><br>- C#<br>- Python<br>- HTML<br>- CSS";
+        const txtDiller = "<b>Kodlama Dilleri:</b><br>- C#<br>- Python<br>- HTML<br>- CSS<br>- JavaScript";
         const txtYabanciDiller = "<b>Yabancı Diller:</b><br>- İngilizce (B2 - Teknik ve Mesleki Yeterlilik)<br>- Türkçe (Anadil)";
         const txtAraclar = "<b>Editörler (IDE):</b><br>- Visual Studio Code<br>- Visual Studio<br>- PyCharm<br><br><b>Geliştirme, Tasarım & Kurgu Araçları:</b><br>- Autodesk Fusion 360 (3D CAD/Modelleme)<br>- Blender (3D Render/Animasyon)<br>- Unity (Oyun/Simülasyon Motoru)<br>- DaVinci Resolve (Video Kurgu & Renk Düzenleme)";
         const txtProjeler = "<b>1. Kafe/Restoran POS ve İşletme Yönetim Sistemi</b><br>" +
@@ -588,7 +588,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             "<b>3. Siber Güvenlik Veri Setlerinde Aşırı Örnekleme ve Veri Sızıntısı Analizi</b><br>" +
                             "- <b>Kategori:</b> Yapay Zeka / Veri Bilimi (Akademik Araştırma)<br>" +
                             "- <b>Teknolojiler:</b> Python, Makine Öğrenmesi (Machine Learning), SMOTE<br>" +
-                            "- <b>Detaylar:</b> Nesnelerin İnterneti (IoT) ağlarındaki siber tehditleri içeren devasa 'CICIoT2023' veri seti üzerinde makine öğrenmesi modelleri eğitilirken, azınlık sınıflarını dengelemek için SMOTE (Synthetic Minority Over-sampling Technique) algoritması uygulandı. Sentetik veri üretim aşamalarında yaşanabilecek 'Veri Sızıntısı (Data Leakage)' probleminin, yapay zeka modellerinin siber güvenlik tehditlerini tespit etmedeki gerçek dünya başarı metriklerine etkisi akademik bir yaklaşımla araştırılmaktadır.";
+                            "- <b>Detaylar:</b> Nesnelerin İnterneti (IoT) ağlarındaki siber tehditleri içeren devasa 'CICIoT2023' veri seti üzerinde makine öğrenmesi modelleri eğitilirken, azınlık sınıflarını dengelemek için SMOTE (Synthetic Minority Over-sampling Technique) algoritması uygulandı. Sentetik veri üretim aşamalarında yaşanabilecek 'Veri Sızıntısı (Data Leakage)' probleminin, yapay zeka modellerinin siber güvenlik tehditlerini tespit etmedeki gerçek dünya başarı metriklerine etkisi akademik bir yaklaşımla araştırılmaktadır.<br><br>" +
+                            "<b>4. Terminal Tabanlı Etkileşimli Portfolyo</b><br>" +
+                            "- <b>Kategori:</b> Web Geliştirme (Front-End)<br>" +
+                            "- <b>Teknolojiler:</b> HTML, CSS, JavaScript<br>" +
+                            "- <b>Detaylar:</b> Kişisel projeleri ve yetenekleri retro bir komut satırı arayüzü ile sunan interaktif web uygulaması, anlık olarak deniyorsun :).";
         const txtIletisim = "<b>Email:</b> <a href='mailto:atlykrdg@gmail.com' style='color:#b7d29a; text-decoration:none;'>atlykrdg@gmail.com</a><br><b>LinkedIn:</b> <a href='https://www.linkedin.com/in/atılay-karadağ' target='_blank' style='color:#b7d29a; text-decoration:none;'>www.linkedin.com/in/atılay-karadağ</a>";
 
         // --- STANDART TERMİNAL KOMUTLARI (PARSING / AYRIŞTIRMA MANTIĞI) ---
@@ -601,7 +605,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (arg1 === "projects") {
                 printResponse("<span class='ai-notice'>[Vanguard OS: Projeler dizini listeleniyor...]</span><br>" + txtProjeler, true); return;
             } else if (arg1 === "") {
-                printResponse("about.txt&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#b7d29a'>projects/</span>"); return;
+                printResponse("about.txt&nbsp;&nbsp;&nbsp;&nbsp;education.txt&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#b7d29a'>projects/</span>"); return;
             } else {
                 printResponse("ls: cannot access '" + arg1 + "': No such file or directory"); return;
             }
@@ -610,6 +614,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (baseCmd === "cat") {
             if (arg1 === "about.txt") {
                 printResponse("<span class='ai-notice'>[Vanguard OS: about.txt dosyası okundu...]</span><br>" + txtHakkinda, true); return;
+            } else if (arg1 === "education.txt") {
+                printResponse("<span class='ai-notice'>[Vanguard OS: education.txt dosyası okundu...]</span><br>" + txtEgitim, true); return;
             } else if (arg1 === "") {
                 printResponse("cat: argüman eksik. Kullanım: cat [dosya_adi]"); return;
             } else {
@@ -650,7 +656,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (lowerCmd === "github" || lowerCmd === "repo" || lowerCmd.includes("git")) {
-            printResponse("<span class='ai-notice'>[Vanguard OS: Uzak sunucu bağlantısı kuruluyor]</span><br>GitHub Profili: <a href='https://github.com/atylkrdg' target='_blank' style='color:#b7d29a; text-decoration:none;'>github.com/atylkrdg</a>", true); return;
+            printResponse("<span class='ai-notice'>[Vanguard OS: Uzak sunucu bağlantısı kuruluyor]</span><br>GitHub Profili: <a href='https://github.com/atlykrdg' target='_blank' style='color:#b7d29a; text-decoration:none;'>github.com/atlykrdg</a>", true); return;
         }
 
         if (lowerCmd.includes("durum") || lowerCmd.includes("status") || lowerCmd.includes("güncel")) {
@@ -747,7 +753,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const txtHepsi = "<span class='ai-notice'>[Vanguard OS: Tüm veritabanı kayıtları ekrana dökülüyor...]</span><br><br>" +
                              "<span style='color: #b7d29a;'>--- KİMLİK & HAKKINDA ---</span><br>" + txtHakkinda + "<br><br>" +
                              "<span style='color: #b7d29a;'>--- EĞİTİM ---</span><br>" + txtEgitim + "<br><br>" +
-                             "<span style='color: #b7d29a;'>--- KODLAMA DİLLERİ ---</span><br>" + txtDiller + "<br><br>" + txtYabanciDiller + "<br><br>" + txtAraclar + "<br><br>" +
+                             "<span style='color: #b7d29a;'>--- BECERİLER VE ARAÇLAR ---</span><br>" + txtDiller + "<br><br>" + txtYabanciDiller + "<br><br>" + txtAraclar + "<br><br>" +
                              "<span style='color: #b7d29a;'>--- PROJELER ---</span><br>" + txtProjeler + "<br><br>" +
                              "<span style='color: #b7d29a;'>--- İLETİŞİM ---</span><br>" + txtIletisim;
             printResponse(txtHepsi, true);
@@ -778,6 +784,7 @@ document.addEventListener("DOMContentLoaded", () => {
                           "<pre style='margin:0; font-family:inherit; font-size:inherit;'>" +
                           "  whoami           <span style='color:#888888'>Kişisel kimlik ve profil özeti</span>\n" +
                           "  cat about.txt    <span style='color:#888888'>Hakkımda detaylı bilgi metni</span>\n" +
+                          "  cat education.txt<span style='color:#888888'>Akademik eğitim geçmişi</span>\n" +
                           "  contact          <span style='color:#888888'>İletişim ağları (Email, LinkedIn)</span>\n" +
                           "  github           <span style='color:#888888'>Uzak sunucu profili (GitHub)</span>\n" +
                           "  sudo hire-me</pre><br>" +
