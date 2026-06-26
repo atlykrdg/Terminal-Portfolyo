@@ -235,23 +235,48 @@ document.addEventListener("DOMContentLoaded", () => {
             const cpuUs = (25 + Math.random() * 15).toFixed(1);
             const cpuSy = (8 + Math.random() * 5).toFixed(1);
             const cpuId = (100 - cpuUs - cpuSy).toFixed(1);
-            const task1 = (75 + Math.random() * 10).toFixed(1);
-            const task2 = (10 + Math.random() * 4).toFixed(1);
+
+            const t_sysd_c = (Math.random() * 0.2).toFixed(1).padStart(6, ' ');
+            const t_sysd_m = (0.1 + Math.random() * 0.1).toFixed(1).padStart(6, ' ');
+
+            const t_netm_c = (Math.random() * 0.3).toFixed(1).padStart(6, ' ');
+            const t_netm_m = (0.1 + Math.random() * 0.2).toFixed(1).padStart(6, ' ');
+
+            const t_bash_c = (1.5 + Math.random() * 2.0).toFixed(1).padStart(6, ' ');
+            const t_bash_m = (1.3 + Math.random() * 0.2).toFixed(1).padStart(6, ' ');
+
+            const task1_c = (75 + Math.random() * 10).toFixed(1).padStart(6, ' ');
+            const task1_m = (35.0 + Math.random() * 1.5).toFixed(1).padStart(6, ' ');
+
+            const task2_c = (10 + Math.random() * 4).toFixed(1).padStart(6, ' ');
+            const task2_m = (11.5 + Math.random() * 1.0).toFixed(1).padStart(6, ' ');
+
+            const t_staj_c = (3.5 + Math.random() * 1.5).toFixed(1).padStart(6, ' ');
+            const t_staj_m = (4.0 + Math.random() * 0.5).toFixed(1).padStart(6, ' ');
+
+            const t_74xx_c = (0.5 + Math.random() * 1.5).toFixed(1).padStart(6, ' ');
+            const t_74xx_m = (2.0 + Math.random() * 0.3).toFixed(1).padStart(6, ' ');
+
+            const t_test_c = (0.2 + Math.random() * 0.6).toFixed(1).padStart(6, ' ');
+            const t_test_m = (0.8 + Math.random() * 0.4).toFixed(1).padStart(6, ' ');
+
+            const t_top_c = (0.2 + Math.random() * 0.4).toFixed(1).padStart(6, ' ');
+            const t_top_m = (0.4 + Math.random() * 0.2).toFixed(1).padStart(6, ' ');
 
             topDiv.innerHTML = 
                 `top - ${new Date().toLocaleTimeString()} up 4 days,  3:22,  1 user,  load average: ${(2.1 + Math.random()).toFixed(2)}, 1.95, 1.54\n` +
                 `Tasks: 142 total,   2 running, 140 sleeping,   0 stopped,   0 zombie\n` +
                 `%Cpu(s): ${cpuUs} us, ${cpuSy} sy,  0.0 ni, ${cpuId} id,  1.0 wa\n\n` +
                 `  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND\n` +
-                `    1 root      20   0  168884  13276   8456 S   0.0   0.1   0:05.14 systemd\n` +
-                `  843 root      20   0   48576  15424   8192 S   0.1   0.2   1:12.33 NetworkManager\n` +
-                ` 1402 atilay    20   0 3548292 215432  65536 S   2.5   1.4  15:42.11 bash\n` +
-                ` 4021 atilay    20   0 8541230 405134 105432 R  ${task1}  35.4 120:15.33 python3 CICIoT2023_SMOTE.py\n` +
-                ` 4055 atilay    20   0  451230 150231  45123 S  ${task2}  12.0  45:10.12 python3 PyQt5_Cafe_POS.py\n` +
-                ` 4102 atilay    20   0  251020  45021  15420 S   4.2   4.2  10:05.45 ./Yaz_Stajina_Hazirlik.sh\n` +
-                ` 4199 atilay    20   0   12450   4520   2100 S   1.0   2.1   2:12.50 ./74xx_Logic_Sim.bin\n` +
-                ` 4210 atilay    20   0   10240   2140   1020 S   0.5   1.0   0:45.10 Klavye_Akustik_Test.exe\n` +
-                ` 4350 atilay    20   0   15420   5120   3140 R   0.5   0.5   0:00.12 top\n\n` +
+                `    1 root      20   0  168884  13276   8456 S${t_sysd_c}${t_sysd_m}   0:05.14 systemd\n` +
+                `  843 root      20   0   48576  15424   8192 S${t_netm_c}${t_netm_m}   1:12.33 NetworkManager\n` +
+                ` 1402 atilay    20   0 3548292 215432  65536 S${t_bash_c}${t_bash_m}  15:42.11 bash\n` +
+                ` 4021 atilay    20   0 8541230 405134 105432 R${task1_c}${task1_m} 120:15.33 python3 CICIoT2023_SMOTE.py\n` +
+                ` 4055 atilay    20   0  451230 150231  45123 S${task2_c}${task2_m}  45:10.12 python3 PyQt5_Cafe_POS.py\n` +
+                ` 4102 atilay    20   0  251020  45021  15420 S${t_staj_c}${t_staj_m}  10:05.45 ./Yaz_Stajina_Hazirlik.sh\n` +
+                ` 4199 atilay    20   0   12450   4520   2100 S${t_74xx_c}${t_74xx_m}   2:12.50 ./74xx_Logic_Sim.bin\n` +
+                ` 4210 atilay    20   0   10240   2140   1020 S${t_test_c}${t_test_m}   0:45.10 Klavye_Akustik_Test.exe\n` +
+                ` 4350 atilay    20   0   15420   5120   3140 R${t_top_c}${t_top_m}   0:00.12 top\n\n` +
                 `<span style='color: #ff5555; font-weight: bold;'>[CANLI SİMÜLASYON] Kapatıp konsola dönmek için 'q' tuşuna basınız.</span>`;
             
             scrollToBottom();
@@ -758,8 +783,8 @@ document.addEventListener("DOMContentLoaded", () => {
                           "  sudo hire-me</pre><br>" +
                           "<span style='color: #b7d29a;'>core.capabilities-</span> <span style='color:#888888;'>// Profesyonel Yetkinlikler</span><br>" +
                           "<pre style='margin:0; font-family:inherit; font-size:inherit;'>" +
-                          "  ls projects      <span style='color:#888888'>Geliştirilen projelerin listesi</span>\n" +
                           "  skills --list    <span style='color:#888888'>Teknik beceriler ve araçlar</span>\n" +
+                          "  ls projects      <span style='color:#888888'>Geliştirilen projelerin listesi</span>\n" +
                           "  status           <span style='color:#888888'>Güncel akademik ve çalışma durumu</span></pre><br>" +
                           "<span style='color: #b7d29a;'>sub.modules-</span> <span style='color:#888888;'>// Vanguard OS Alt Modülleri</span><br>" +
                           "<pre style='margin:0; font-family:inherit; font-size:inherit;'>" +
