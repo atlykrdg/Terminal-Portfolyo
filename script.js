@@ -546,7 +546,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const lowerCmd = cmd.toLowerCase();
 
         // ---------------- METİN ŞABLONLARI (CV FORMATI) ----------------
-        const txtHakkinda = "Merhaba, ben Atılay Karadağ. Balıkesir Üniversitesi Bilgisayar Mühendisliği 2. sınıf öğrencisiyim. Yazılım geliştirme, algoritmik problem çözme ve donanım/yazılım entegrasyonu alanlarına yoğun ilgi duyuyorum. Dinamik takım ortamlarında uyumlu çalışabilen, modern teknolojileri hızla benimseyerek yenilikçi ve verimli çözümler üretmeyi hedefleyen bir mühendis adayıyım.";
+        const txtHakkinda = "Merhaba, ben Atılay Karadağ. Balıkesir Üniversitesi Bilgisayar Mühendisliği 2. sınıf öğrencisiyim. Yazılım geliştirme, donanım/yazılım entegrasyonu ve 3D tasarım alanlarına yoğun ilgi duyuyorum. Dinamik takım ortamlarında uyumlu çalışabilen, modern teknolojileri hızla benimseyerek yenilikçi ve verimli çözümler üretmeyi hedefleyen bir mühendis adayıyım.";
         const txtWhoami = "Pilot: Atılay Karadağ<br>Sınıf: Bilgisayar Mühendisliği (2. Yıl)<br>Uzmanlık: Yazılım Geliştirme & Donanım Entegrasyonu & 3D Tasarım<br>Statü: Göreve Hazır";
         const txtEgitim = "<b>Lisans:</b> Balıkesir Üniversitesi, Bilgisayar Mühendisliği (2024-...) | Not Ortalaması: 3,30<br><b>Lise:</b> Bursa Osmangazi Gazi Anadolu Lisesi (2020-2024) | Sayısal - Diploma Puanı: 88,62";
         const txtDiller = "<b>Kodlama Dilleri:</b><br>- C#<br>- Python<br>- HTML<br>- CSS";
