@@ -1,4 +1,4 @@
-# 🖥️ Vanguard OS - Terminal Portfolio
+# 🖥️ Vanguard OS - Terminal Portfolyo
 
 > **Atılay Karadağ**'ın kişisel projelerini ve yeteneklerini sunduğu, retro komut satırı arayüzüne sahip interaktif web tabanlı portfolyo.
 
